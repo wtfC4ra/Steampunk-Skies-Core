@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "steampunk_skies_core:block/crushed_basalt"
+  }
+}
