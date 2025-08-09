@@ -7,7 +7,9 @@
     "EncasedFanBlockEntityMixin",
     "EncasedFanBlockMixin",
     "MechanicalCrafterBlockEntityMixin",
-    "MechanicalCrafterBlockMixin"
+    "MechanicalCrafterBlockMixin",
+    "CrushingWheelBlockMixin",
+    "CrushingWheelControllerBlockMixin"
   ],
   "minVersion": "0.8",
   "injectors": {
