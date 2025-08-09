@@ -5,7 +5,9 @@
   "refmap": "steampunk_skies_core.refmap.json",
   "mixins": [
     "EncasedFanBlockEntityMixin",
-    "EncasedFanBlockMixin"
+    "EncasedFanBlockMixin",
+    "MechanicalCrafterBlockEntityMixin",
+    "MechanicalCrafterBlockMixin"
   ],
   "minVersion": "0.8",
   "injectors": {
