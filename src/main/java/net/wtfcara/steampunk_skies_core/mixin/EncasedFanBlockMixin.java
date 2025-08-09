@@ -13,6 +13,6 @@ public abstract class EncasedFanBlockMixin extends DirectionalKineticBlock {
 
     @Override
     public SpeedLevel getMinimumRequiredSpeedLevel(){
-        return SpeedLevel.FAST;
+        return SpeedLevel.MEDIUM;
     }
 }

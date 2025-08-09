@@ -3,6 +3,7 @@ package net.wtfcara.steampunk_skies_core.mixin;
 import com.simibubi.create.content.kinetics.base.IRotate;
 import com.simibubi.create.content.kinetics.fan.EncasedFanBlockEntity;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
+import com.simibubi.create.infrastructure.config.AllConfigs;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -34,7 +35,7 @@ public abstract class EncasedFanBlockEntityMixin{
     @Inject(method = "tick", at = @At(value = "FIELD", target = "Lcom/simibubi/create/content/kinetics/fan/EncasedFanBlockEntity;entitySearchCooldown:I"), remap = false, cancellable = true)
     private void tickMixin(CallbackInfo ci){
         var fan = (EncasedFanBlockEntity) (Object) this;
-        if (abs(fan.getSpeed()) < 32){
+        if (abs(fan.getSpeed()) < AllConfigs.server().kinetics.mediumSpeed.get()){
             ci.cancel();
         }
     }
