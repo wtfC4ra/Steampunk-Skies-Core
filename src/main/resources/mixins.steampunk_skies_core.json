@@ -9,7 +9,8 @@
     "MechanicalCrafterBlockEntityMixin",
     "MechanicalCrafterBlockMixin",
     "CrushingWheelBlockMixin",
-    "CrushingWheelControllerBlockMixin"
+    "CrushingWheelControllerBlockMixin",
+    "BoilerHeatersMixin"
   ],
   "minVersion": "0.8",
   "injectors": {
