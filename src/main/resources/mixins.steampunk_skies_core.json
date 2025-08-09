@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "steampunk_skies_core.refmap.json",
   "mixins": [
-    "EncasedFanBlockEntityMixin"
+    "EncasedFanBlockEntityMixin",
+    "EncasedFanBlockMixin"
   ],
   "minVersion": "0.8",
   "injectors": {
