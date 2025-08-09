@@ -17,12 +17,12 @@ public abstract class CrushingWheelControllerBlockMixin implements IBE<CrushingW
     @Inject(method = "checkEntityForProcessing", at = @At(value = "HEAD"), remap = false, cancellable = true)
     private void checkEntityMixin(Level worldIn, BlockPos pos, Entity entityIn, CallbackInfo ci){
         CrushingWheelControllerBlockEntity be = getBlockEntity(worldIn, pos);
-        System.out.println(be.crushingspeed*50);
-        if (be == null)
-            System.out.println("is null");
+        if(be == null){
             ci.cancel();
-        if (be.crushingspeed*50 < AllConfigs.server().kinetics.mediumSpeed.get()){
-            System.out.println("Wheels not fast enough");
+        }
+        System.out.println(be.crushingspeed*50);
+        if(be.crushingspeed*50 < AllConfigs.server().kinetics.mediumSpeed.get()){
+            System.out.println("wheels too slow!");
             ci.cancel();
         }
     }
