@@ -20,19 +20,8 @@ import static java.lang.Math.abs;
 
 @Mixin(EncasedFanBlockEntity.class)
 public abstract class EncasedFanBlockEntityMixin{
-    @Shadow
-    protected boolean updateAirFlow;
-    /***
-    @Inject(method = "getAirFlowDirection", at = @At(value = "HEAD"), remap = false, cancellable = true)
-    private void mixin(CallbackInfoReturnable cir) {
-        var fan = (EncasedFanBlockEntity) (Object) this;
-        float speed = fan.getSpeed();
-        if (abs(speed)<32) {
-            cir.setReturnValue(null);
-        }
-    }
-    ***/
-    @Inject(method = "tick", at = @At(value = "FIELD", target = "Lcom/simibubi/create/content/kinetics/fan/EncasedFanBlockEntity;entitySearchCooldown:I"), remap = false, cancellable = true)
+
+    @Inject(method = "tick", at = @At(value = "FIELD", target = "Lcom/simibubi/create/content/kinetics/fan/EncasedFanBlockEntity;entitySearchCooldown:I"), cancellable = true)
     private void tickMixin(CallbackInfo ci){
         var fan = (EncasedFanBlockEntity) (Object) this;
         if (abs(fan.getSpeed()) < AllConfigs.server().kinetics.mediumSpeed.get()){

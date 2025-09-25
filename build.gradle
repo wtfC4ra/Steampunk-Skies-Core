@@ -161,8 +161,8 @@ dependencies {
 }
 
 mixin {
-    add sourceSets.main, 'mixins.steampunk_skies_core.refmap.json'
-    config 'mixins.steampunk_skies_core.json'
+    add sourceSets.main, 'steampunk_skies_core.refmap.json'
+    config 'steampunk_skies_core.mixins.json'
 
     debug.verbose = true
     debug.export = true

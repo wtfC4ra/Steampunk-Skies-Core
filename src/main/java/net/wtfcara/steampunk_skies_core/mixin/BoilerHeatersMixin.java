@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BoilerHeaters.class)
 public abstract class BoilerHeatersMixin {
-    @Inject(method = "registerDefaults", at = @At(value = "HEAD"), remap = false, cancellable = true)
+    @Inject(method = "registerDefaults", at = @At(value = "HEAD"), cancellable = true)
     private static void registerDefaults(CallbackInfo ci){
         ci.cancel();
     }

@@ -13,6 +13,6 @@ public abstract class MechanicalCrafterBlockMixin extends HorizontalKineticBlock
 
     @Override
     public IRotate.SpeedLevel getMinimumRequiredSpeedLevel(){
-        return IRotate.SpeedLevel.SLOW;
+        return IRotate.SpeedLevel.MEDIUM;
     }
 }

@@ -14,14 +14,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(CrushingWheelControllerBlock.class)
 public abstract class CrushingWheelControllerBlockMixin implements IBE<CrushingWheelControllerBlockEntity> {
-    @Inject(method = "checkEntityForProcessing", at = @At(value = "HEAD"), remap = false, cancellable = true)
+    @Inject(method = "checkEntityForProcessing", at = @At(value = "HEAD"), cancellable = true)
     private void checkEntityMixin(Level worldIn, BlockPos pos, Entity entityIn, CallbackInfo ci){
         CrushingWheelControllerBlockEntity be = getBlockEntity(worldIn, pos);
         if(be == null){
             ci.cancel();
         }
-        System.out.println(be.crushingspeed*50);
-        if(be.crushingspeed*50 < AllConfigs.server().kinetics.mediumSpeed.get()){
+        if(be.crushingspeed*50 < AllConfigs.server().kinetics.fastSpeed.get()){
             System.out.println("wheels too slow!");
             ci.cancel();
         }

@@ -12,6 +12,6 @@ public abstract class CrushingWheelBlockMixin extends RotatedPillarKineticBlock 
 
     @Override
     public SpeedLevel getMinimumRequiredSpeedLevel(){
-        return SpeedLevel.MEDIUM;
+        return SpeedLevel.FAST;
     }
 }
