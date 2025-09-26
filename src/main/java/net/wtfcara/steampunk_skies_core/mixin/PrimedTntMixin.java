@@ -17,9 +17,10 @@ public abstract class PrimedTntMixin extends Entity implements TraceableEntity {
     public PrimedTntMixin(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
-    @Inject(method = "explode", at = @At(value = "HEAD"), cancellable = true)
+    @Inject(method = "explode", at = @At(value = "HEAD"), cancellable = true, remap = false)
     private void explodeMixin(CallbackInfo ci){
         float f = Config.tnt_strength;
+        System.out.println("test");
         this.level().explode(this, this.getX(), this.getY(0.0625D), this.getZ(), f, Level.ExplosionInteraction.TNT);
         ci.cancel();
     }

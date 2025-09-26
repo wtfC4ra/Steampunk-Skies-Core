@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(CrushingWheelControllerBlock.class)
 public abstract class CrushingWheelControllerBlockMixin implements IBE<CrushingWheelControllerBlockEntity> {
-    @Inject(method = "checkEntityForProcessing", at = @At(value = "HEAD"), cancellable = true)
+    @Inject(method = "checkEntityForProcessing", at = @At(value = "HEAD"), cancellable = true, remap = false)
     private void checkEntityMixin(Level worldIn, BlockPos pos, Entity entityIn, CallbackInfo ci){
         CrushingWheelControllerBlockEntity be = getBlockEntity(worldIn, pos);
         if(be == null){

@@ -35,10 +35,9 @@ public class SteampunkSkiesCore
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
-
+        MinecraftForge.EVENT_BUS.addListener(ConcreteStep::onPlayerTickEvent);
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

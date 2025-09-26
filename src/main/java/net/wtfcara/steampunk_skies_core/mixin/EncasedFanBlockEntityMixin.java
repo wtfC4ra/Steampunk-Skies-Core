@@ -21,7 +21,7 @@ import static java.lang.Math.abs;
 @Mixin(EncasedFanBlockEntity.class)
 public abstract class EncasedFanBlockEntityMixin{
 
-    @Inject(method = "tick", at = @At(value = "FIELD", target = "Lcom/simibubi/create/content/kinetics/fan/EncasedFanBlockEntity;entitySearchCooldown:I"), cancellable = true)
+    @Inject(method = "tick", at = @At(value = "FIELD", target = "Lcom/simibubi/create/content/kinetics/fan/EncasedFanBlockEntity;entitySearchCooldown:I"), cancellable = true, remap = false)
     private void tickMixin(CallbackInfo ci){
         var fan = (EncasedFanBlockEntity) (Object) this;
         if (abs(fan.getSpeed()) < AllConfigs.server().kinetics.mediumSpeed.get()){

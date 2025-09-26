@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(SawMovementBehaviour.class)
 public class SawMovementBehaviourMixin {
-    @Inject(method = "canBreak", at = @At(value = "HEAD"), cancellable = true)
+    @Inject(method = "canBreak", at = @At(value = "HEAD"), cancellable = true, remap = false)
     private void mixin(Level world, BlockPos breakingPos, BlockState state, CallbackInfoReturnable<Boolean> cir){
         cir.setReturnValue(false);
     }

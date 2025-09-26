@@ -14,7 +14,7 @@ import static java.lang.Math.abs;
 
 @Mixin(MechanicalCrafterBlockEntity.class)
 public class MechanicalCrafterBlockEntityMixin {
-    @Inject(method = "tick", at = @At(value = "FIELD", target = "Lcom/simibubi/create/content/kinetics/crafter/MechanicalCrafterBlockEntity;phase:Lcom/simibubi/create/content/kinetics/crafter/MechanicalCrafterBlockEntity$Phase;"), cancellable = true)
+    @Inject(method = "tick", at = @At(value = "FIELD", target = "Lcom/simibubi/create/content/kinetics/crafter/MechanicalCrafterBlockEntity;phase:Lcom/simibubi/create/content/kinetics/crafter/MechanicalCrafterBlockEntity$Phase;"), cancellable = true, remap = false)
     private void tickMixin(CallbackInfo ci){
         var crafter = (MechanicalCrafterBlockEntity)(Object)(this);
         if (abs(crafter.getSpeed()) < AllConfigs.server().kinetics.mediumSpeed.get()){
